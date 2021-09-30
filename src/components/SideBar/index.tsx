@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
 
-import { Button } from './Button';
+import { Button } from '../Button';
 
-import { api } from '../services/api';
+import { api } from '../../services/api';
 
 import '../styles/sidebar.scss';
-import { GenreContext } from '../contexts/GenreContext';
+import { GenreContext } from '../../contexts/GenreContext';
 
 interface GenreResponseProps {
 	id: number;

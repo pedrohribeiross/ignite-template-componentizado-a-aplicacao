@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
 
-import { MovieCard } from './MovieCard';
+import { MovieCard } from '../MovieCard';
 
-import { api } from '../services/api';
+import { api } from '../../services/api';
 
 import '../styles/content.scss';
-import { GenreContext } from '../contexts/GenreContext';
+import { GenreContext } from '../../contexts/GenreContext';
 
 interface GenreResponseProps {
 	id: number;
