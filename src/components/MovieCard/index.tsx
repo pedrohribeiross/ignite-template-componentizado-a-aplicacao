@@ -12,7 +12,7 @@ interface MovieCardProps {
 export function MovieCard(props: MovieCardProps) {
 	return (
 		<Container>
-			<img src={props.poster} alt={props.title} />
+			<img src={props.poster} alt={props.title} loading='lazy' />
 
 			<CardArea>
 				<MovieInfo>
