@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { MovieCard } from './MovieCard';
 
 import { api } from '../services/api';
 
 import '../styles/content.scss';
+import { GenreContext } from '../contexts/GenreContext';
 
 interface GenreResponseProps {
 	id: number;
@@ -24,7 +25,7 @@ interface MovieProps {
 }
 
 export function Content() {
-	const [selectedGenreId, setSelectedGenreId] = useState(1);
+	const { selectedGenreId } = useContext(GenreContext);
 
 	const [movies, setMovies] = useState<MovieProps[]>([]);
 
