@@ -4,7 +4,7 @@ import { MovieCard } from '../MovieCard';
 
 import { api } from '../../services/api';
 
-import '../../styles/content.scss';
+import { Container, Category, MoviesMain } from './styles';
 import { GenreContext } from '../../contexts/GenreContext';
 
 interface GenreResponseProps {
@@ -46,14 +46,14 @@ export function Content() {
 	}, [selectedGenreId]);
 
 	return (
-		<div className='container'>
+		<Container>
 			<header>
-				<span className='category'>
+				<Category>
 					Categoria:<span> {selectedGenre.title}</span>
-				</span>
+				</Category>
 			</header>
 
-			<main>
+			<MoviesMain>
 				<div className='movies-list'>
 					{movies.map((movie) => (
 						<MovieCard
@@ -65,7 +65,7 @@ export function Content() {
 						/>
 					))}
 				</div>
-			</main>
-		</div>
+			</MoviesMain>
+		</Container>
 	);
 }

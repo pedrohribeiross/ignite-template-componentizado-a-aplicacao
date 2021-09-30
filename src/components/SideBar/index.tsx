@@ -4,7 +4,7 @@ import { Button } from '../Button';
 
 import { api } from '../../services/api';
 
-import '../../styles/sidebar.scss';
+import { ButtonsContainer, Container } from './styles';
 import { GenreContext } from '../../contexts/GenreContext';
 
 interface GenreResponseProps {
@@ -25,12 +25,12 @@ export function SideBar() {
 	}, []);
 
 	return (
-		<nav className='sidebar'>
+		<Container>
 			<span>
 				Watch<p>Me</p>
 			</span>
 
-			<div className='buttons-container'>
+			<ButtonsContainer>
 				{genres.map((genre) => (
 					<Button
 						key={String(genre.id)}
@@ -40,7 +40,7 @@ export function SideBar() {
 						selected={selectedGenreId === genre.id}
 					/>
 				))}
-			</div>
-		</nav>
+			</ButtonsContainer>
+		</Container>
 	);
 }
