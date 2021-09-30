@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { Button } from './Button';
 
 import { api } from '../services/api';
 
 import '../styles/sidebar.scss';
+import { GenreContext } from '../contexts/GenreContext';
 
 interface GenreResponseProps {
 	id: number;
@@ -13,18 +14,15 @@ interface GenreResponseProps {
 }
 
 export function SideBar() {
-	const [selectedGenreId, setSelectedGenreId] = useState(1);
 	const [genres, setGenres] = useState<GenreResponseProps[]>([]);
+
+	const { selectedGenreId, handleClickButton } = useContext(GenreContext);
 
 	useEffect(() => {
 		api.get<GenreResponseProps[]>('genres').then((response) => {
 			setGenres(response.data);
 		});
 	}, []);
-
-	function handleClickButton(id: number) {
-		setSelectedGenreId(id);
-	}
 
 	return (
 		<nav className='sidebar'>
