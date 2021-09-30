@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../styles/device';
 
 export const Container = styled.nav`
 	display: flex;
@@ -22,6 +23,19 @@ export const Container = styled.nav`
 		p {
 			display: inline;
 			color: ${({ theme }) => theme.colors.white};
+		}
+	}
+
+	@media ${device.laptop} {
+		max-width: 20rem;
+	}
+
+	@media ${device.tablet} {
+		max-width: 18rem;
+
+		span {
+			font-size: 2.25rem;
+			margin-bottom: 3.5rem;
 		}
 	}
 `;

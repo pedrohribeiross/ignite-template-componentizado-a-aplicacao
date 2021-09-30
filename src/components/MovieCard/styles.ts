@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../styles/device';
 
 export const Container = styled.div`
 	position: relative;
@@ -6,6 +7,11 @@ export const Container = styled.div`
 	img {
 		width: 14.31rem;
 		height: 21.25rem;
+	}
+
+	@media ${device.tablet} {
+		display: flex;
+		justify-content: center;
 	}
 `;
 
