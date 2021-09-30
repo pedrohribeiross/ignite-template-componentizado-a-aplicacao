@@ -4,7 +4,7 @@ import { MovieCard } from '../MovieCard';
 
 import { api } from '../../services/api';
 
-import '../styles/content.scss';
+import '../../styles/content.scss';
 import { GenreContext } from '../../contexts/GenreContext';
 
 interface GenreResponseProps {
